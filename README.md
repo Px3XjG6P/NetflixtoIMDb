@@ -1,6 +1,6 @@
 # Netflix to IMDb
 
-![NetflixtoIMDb](https://user-images.githubusercontent.com/50136842/57150776-7465d780-6dcf-11e9-8e07-7bb37fdabc93.png)
+![NetflixtoIMDb](https://raw.githubusercontent.com/Px3XjG6P/NetflixtoIMDb/master/app/src/main/res/mipmap-xxxhdpi/usage.png)
 
 Summary: A Netflix user can easily lookup a title in the IMDb
 

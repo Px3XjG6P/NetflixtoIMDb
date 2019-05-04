@@ -6,6 +6,8 @@ import android.app.SearchManager;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import java.io.PrintWriter;
@@ -18,28 +20,33 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ScrollView scrollView = findViewById(R.id.scrollView);
         TextView textView = findViewById(R.id.textView);
 
         try
         {
-            Intent inIntent = getIntent();
-            String message = inIntent.getStringExtra(Intent.EXTRA_TEXT);
+            String message = getIntent().getStringExtra(Intent.EXTRA_TEXT);
 
             if( message == null )
             {
-                textView.setText("Hint: tap the share icon in the Netflix app.");
+                findViewById(R.id.imageView).setVisibility(View.VISIBLE);
                 return;
             }
 
-            Pattern pattern = Pattern.compile("^[^\"]+\"([^\"]+)\"[^\"]+$");
-            Matcher matcher = pattern.matcher(message);
-            if( matcher.find() ) { message = matcher.group(1); }
+            Matcher matcher = Pattern.compile("^[^\"]+\"([^\"]+)\"[^\"]+$").matcher(message);
+
+            if( ! matcher.find() )
+            {
+                throw new Exception("Here we go. Netflix changed something without consulting me. <<<"+message+">>>");
+            }
+
+            message = matcher.group(1);
 
             Intent outIntent = new Intent();
-
             outIntent.setAction(Intent.ACTION_SEARCH);
             outIntent.setPackage("com.imdb.mobile");
             outIntent.putExtra(SearchManager.QUERY,message);
@@ -52,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
             }
 
             outIntent = new Intent();
-
             outIntent.setAction(Intent.ACTION_VIEW);
             outIntent.setData(Uri.parse("https://m.imdb.com/find?q="+ URLEncoder.encode( message )));
 
@@ -63,20 +69,13 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
 
-            textView.setText("Hint: install the IMDB app or an internet browser.");
-
-
-
-
-
+            throw new Exception("No internet browser found. This must be a Nokia 3310. Nice try.");
         }
         catch( Exception e )
         {
             textView.setText( getStackTrace(e) );
+            scrollView.setVisibility(View.VISIBLE);
         }
-
-
-
     }
 
     public static String getStackTrace(final Throwable throwable)
@@ -84,10 +83,8 @@ public class MainActivity extends AppCompatActivity {
         final StringWriter sw = new StringWriter();
         final PrintWriter pw = new PrintWriter(sw, true);
 
-        pw.println("\"Astral, I'm going to need a sharp scalpel and my long handle stainless spoon.\"");
-        pw.println("-- Dr. Walter Bishop, Fringe");
+        pw.println("\"Astral, I'm going to need a sharp scalpel and my long handle stainless spoon.\" -- Dr. Walter Bishop, Fringe");
         pw.println("");
-
         throwable.printStackTrace(pw);
 
         return sw.getBuffer().toString();
