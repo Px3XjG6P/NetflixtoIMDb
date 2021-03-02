@@ -12,6 +12,6 @@ How to build from source:
     gradle wrapper
     ./gradlew assembleRelease
 
-Copyright 2019 netflixtoimdb@knars.be  
+Copyright 2019-2021 netflixtoimdb@knars.be  
 License: GPL-3  
 I'm the app author, and I support [inclusion in F-Droid](https://gitlab.com/fdroid/rfp/issues/977).
