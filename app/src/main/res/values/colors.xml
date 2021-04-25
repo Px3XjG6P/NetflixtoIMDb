@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <color name="colorPrimary">#e4b721</color>
-    <color name="colorPrimaryDark">#806813</color>
-    <color name="colorAccent">#e50914</color>
-
+    <color name="black">#FF000000</color>
+    <color name="ni_grey">#FF3F3F3F</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="netflix_red">#FFD4402B</color>
+    <color name="netflix_red_dark">#FFA33020</color>
+    <color name="imdb_yellow">#FFE2B337</color>
+    <color name="imdb_yellow_dark">#FFA58328</color>
+    <color name="ni_teal">#FF647A74</color>
+    <color name="ni_teal_dark">#FF343F3C</color>
 </resources>

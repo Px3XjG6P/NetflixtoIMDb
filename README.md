@@ -1,6 +1,6 @@
 # Netflix to IMDb
 
-![NetflixtoIMDb](https://raw.githubusercontent.com/Px3XjG6P/NetflixtoIMDb/master/app/src/main/res/mipmap-xxxhdpi/usage.png)
+![NetflixtoIMDb](https://raw.githubusercontent.com/Px3XjG6P/NetflixtoIMDb/master/app/src/main/res/drawable/usage.png)
 
 Summary: A Netflix user can easily lookup a title in the IMDb
 
@@ -14,4 +14,3 @@ How to build from source:
 
 Copyright 2019-2021 netflixtoimdb@knars.be  
 License: GPL-3  
-I'm the app author, and I support [inclusion in F-Droid](https://gitlab.com/fdroid/rfp/issues/977).
