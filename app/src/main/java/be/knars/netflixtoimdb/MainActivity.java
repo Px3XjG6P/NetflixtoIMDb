@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
             outIntent = new Intent();
             outIntent.setAction(Intent.ACTION_VIEW);
-            outIntent.setData(Uri.parse("https://m.imdb.com/find?q="+ URLEncoder.encode( message )));
+            outIntent.setData(Uri.parse("https://m.imdb.com/find?q="+ URLEncoder.encode( message, "UTF-8" )));
 
             if( outIntent.resolveActivity(getPackageManager()) != null )
             {
@@ -73,20 +73,11 @@ public class MainActivity extends AppCompatActivity {
         }
         catch( Exception e )
         {
-            textView.setText( getStackTrace(e) );
             scrollView.setVisibility(View.VISIBLE);
+            final StringWriter sw = new StringWriter();
+            final PrintWriter pw = new PrintWriter(sw, true);
+            e.printStackTrace(pw);
+            textView.setText(sw.getBuffer().toString());
         }
-    }
-
-    public static String getStackTrace(final Throwable throwable)
-    {
-        final StringWriter sw = new StringWriter();
-        final PrintWriter pw = new PrintWriter(sw, true);
-
-        pw.println("\"Astral, I'm going to need a sharp scalpel and my long handle stainless spoon.\" -- Dr. Walter Bishop, Fringe");
-        pw.println("");
-        throwable.printStackTrace(pw);
-
-        return sw.getBuffer().toString();
     }
 }
