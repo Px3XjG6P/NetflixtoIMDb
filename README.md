@@ -2,9 +2,9 @@
 
 ![NetflixtoIMDb](https://raw.githubusercontent.com/Px3XjG6P/NetflixtoIMDb/master/app/src/main/res/drawable-land/usage.png)
 
-Summary: A Netflix user can easily lookup a title in the IMDb
+Summary: A Netflix user can lookup a title in IMDb
 
-Description: When a Netflix user taps the share icon in the Netflix app and then selects *this* app (= Netflix to IMDb) then the title is looked up in the IMDb, via an internet browser, or in the IMDb app if it is installed.
+Description: When a Netflix user taps the share icon in the Netflix app and then selects *this* app (= Netflix to IMDb) then the title is looked up in IMDb, via an internet browser, or in IMDb app if it is installed.
 
 [<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
      alt="Get it on F-Droid"

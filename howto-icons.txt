@@ -1,0 +1,6 @@
+https://developer.android.com/studio/write/image-asset-studio
+
+To start Image Asset Studio, follow these steps:
+    In the Project window, select the Android view.
+    Right-click the res folder and select New > Image Asset.
+
