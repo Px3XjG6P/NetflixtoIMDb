@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">Netflix to IMDb</string>
+    <string name="app_name">NI - lookup a Netflix title in IMDb</string>
     <string name="usage">Tap the share icon in the Netflix app.</string>
 </resources>
