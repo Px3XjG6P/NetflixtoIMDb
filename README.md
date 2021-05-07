@@ -9,6 +9,9 @@ Description: When a Netflix user taps the share icon in the Netflix app and then
 [<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
      alt="Get it on F-Droid"
      height="80">](https://f-droid.org/packages/be.knars.netflixtoimdb/)
+[<img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+     alt="Get it on Google Play"
+     height="80">](https://play.google.com/store/apps/details?id=be.knars.netflixtoimdb)
 
 How to build from source:
 
