@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
                 findViewById(R.id.imageView).setVisibility(View.VISIBLE);
                 return;
             }
+            
+            message = message.replace("„", "\"").replace("“", "\"")
 
             Matcher matcher = Pattern.compile("^[^\"]+\"([^\"]+)\"[^\"]+$").matcher(message);
 
